@@ -103,4 +103,7 @@ docker login
 
 ```bash
 docker push <username>/go-fibonacci-api:1.0.0
+
+
+--teste
 ```
