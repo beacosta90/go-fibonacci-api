@@ -2,10 +2,13 @@ FROM golang:1.24
 
 WORKDIR /app
 
-COPY . .
+COPY go.mod ./
 
-RUN go build -o fibonacci-api .
+RUN go mod tidy
+
+COPY . . 
+RUN go build -o main .
 
 EXPOSE 8080
 
-CMD ["./fibonacci-api"]
+CMD ["./main"]
